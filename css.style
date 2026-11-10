@@ -64,7 +64,7 @@ h3 {
 }
 #daftar_isi *:last-child { margin-bottom: 0; }
 .isi_DaIs li a {
-  display: inline-block;
+  display: block;
   position: relative;
   color: #4a5568;
   text-decoration: none;
