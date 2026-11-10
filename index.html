@@ -28,12 +28,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- MathJax CDN untuk visualisasi rumus matematika & sains yang rapi -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
     
   </head>
   <body>
     <main>
       <article>
         <section id="pembuka">
+
+          <!-- Tombol Melayang Ke Atas -->
+<button id="btnBackToTop" title="Kembali ke atas" aria-label="Kembali ke atas">
+  ▲
+</button>
+          
           <p>Pindah Ruas adalah proses memindahkan variabel, suku, atau angka dari satu sisi tanda sama dengan (=) ke sisi lainnya dengan mengubah tanda atau operasi bilangannya.</p>
 
           <p>Sebagian besar orang awam mungkin berpikir ini hanya materi tentang <em>memperlakukan kedua sisi dengan operasi yang sama</em> (misal: kedua sisi dikurangi angka yang sama, atau dibagi variabel yang sama).</p>
@@ -434,6 +442,37 @@ n &amp;= \frac{6.000.000}{{\color{#1b8a6b}{750.000}}} \\
 n &amp;= \mathbf{8\;{\text{Bulan}}}
 \end{align*}
 \]
+        </section>
+
+        <section id="kuis">
+          <h2 class="judul_Materi">Kuis: Uji Logika Pindah Ruas</h2>
+
+          <p>Kamu sudah melihat bagaimana teknik pindah ruas bisa menyelamatkan kita dari kewajiban menghafal puluhan rumus mati. Sekarang saatnya menguji seberapa tajam insting logikamu! Tenang saja, kuis ini <em>murni menguji pola dan arah pergeseran variabel</em>—tanpa ada hitung-angka yang rumit. Yuk, taklukkan tantangan di bawah ini!</p>
+
+           <!-- Container Wadah Kuis -->
+  
+<div class="quiz-wrapper">
+  <div class="quiz-card">
+    <div class="quiz-header">
+      <span class="badge" id="quiz-category">Kategori</span>
+      <h3 class="quiz-title">🧩 Uji Logika Bongkar Pasang Rumus</h3>
+    </div>
+
+    <div class="quiz-body">
+      <p id="quiz-question" class="question-text">Memuat soal...</p>
+      <div id="quiz-options" class="options-group"></div>
+      <div id="quiz-feedback" class="feedback-box hidden">
+        <p id="feedback-text"></p>
+        <p id="explanation-text" class="explanation"></p>
+      </div>
+    </div>
+
+    <div class="quiz-footer">
+      <button id="next-btn" class="btn-next" onclick="loadNextQuestion()">Soal Berikutnya ➔</button>
+    </div>
+  </div>
+</div>
+
         </section>
 
         <footer>
