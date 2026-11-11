@@ -267,6 +267,10 @@ function checkAnswer(selectedBtn, isCorrect, explanation) {
   }
 }
 
-// Jalankan kuis pertama kali saat halaman siap
-document.addEventListener("DOMContentLoaded", loadNextQuestion);
-
+// Jalankan kuis pertama kali dengan aman (mendukung metode fetch Blogger)
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", loadNextQuestion);
+} else {
+  // Jika dokumen sudah telanjur dimuat lewat fetch, langsung panggil fungsinya secara instan!
+  loadNextQuestion();
+}
