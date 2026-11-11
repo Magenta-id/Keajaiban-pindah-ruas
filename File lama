@@ -1,0 +1,315 @@
+<style>
+  /* Menjangkau elemen teks umum */
+  p, li, h1, h2, h3, h4, span {
+    color: #000000 !important;
+  }
+
+  /* Menjangkau formula matematika (MathJax / KaTeX) */
+  .mjx-chtml, .MathJax, .katex, .katex * {
+    color: #000000 !important;
+  }
+  
+    p, ul, ol, li, div {
+    text-align: left !important;
+  }
+</style>
+
+<p style="text-align: justify;">Pindah Ruas adalah&nbsp;proses memindahkan variabel, suku, atau angka dari satu sisi tanda sama dengan (=) ke sisi lainnya dengan mengubah tanda atau operasi bilangannya.&nbsp;</p>
+
+<!--KODE TOMBOL BACK TO TOP KHUSUS ARTIKEL INI-->
+<button id="backToTopBtn" onclick="scrollToTop()" style="background-color: #e84a43; border-color: currentcolor; border-image: none; border-radius: 50%; border-style: none; border-width: medium; border: none; bottom: 20px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; color: white; cursor: pointer; display: none; font-size: 16px; outline: none; padding: 12px 16px; position: fixed; right: 20px; transition: background 0.3s; z-index: 999;" title="Kembali ke atas">
+  ▲
+</button>
+
+<script>
+  let mybutton = document.getElementById("backToTopBtn");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+<p style="text-align: justify;">Sebagian besar orang awam mungkin berpikir ini hanya materi tentang&nbsp;<b style="text-align: left;">memperlakukan kedua sisi dengan operasi yang sama</b><span style="text-align: left;"> (misal: kedua sisi dikurangi angka yang sama, atau dibagi variabel yang sama).</span></p>
+
+<p><span style="text-align: left;">Tapi jika kita mau menelaah lebih dalam, metode ini bisa mempermudah kita untuk menghafal bahkan memahami konsep kenapa sebuah rumus bisa terbentuk.&nbsp;</span></p>
+
+<p style="text-align: justify;">Bayangkan dalam satu materi geometri, untuk bangun datar segitiga saja ada berapa banyak rumus?&nbsp;</p>
+
+<div style="background-color: #f8fafc; border-left: 4px solid rgb(37, 99, 235); border-radius: 0px 8px 8px 0px; margin: 15px 0px; padding: 10px 15px;">
+<p style="text-align: justify;"><b>Segitiga Siku-Siku :</b></p>
+
+<p style="text-align: justify;">- Memiliki satu sudut 90 derajat.<br />- Luas: \(\frac{1}{2} \times a \times t\) (alas dan tinggi adalah dua sisi yang membentuk sudut siku-siku).<br />- Keliling: a + b + c<br />- Sisi Miring (Hipotenusa / c): Menggunakan Teorema Pythagoras, yaitu \(c = \sqrt{a^2 + b^2}\).</p>
+</div>
+  
+  
+<p style="text-align: justify;">Ini baru segitiga siku-siku, belum ditambah segitiga sama sisi, segitiga sama kaki, belum lagi perluasan-nya dalam trigonometri jika yang diketahui adalah satu sisi dan 2 nilai sudut, dan ini baru dari satu bangun ruang, belum lagi persegi, persegi panjang, atau bahkan materi lain seperti persentase, perbandingan, eksponensial, dan yang lainnya, berapa banyak rumus yang harus kita hafal?&nbsp;</p>
+
+<p style="text-align: justify;">Lalu adalagi rumus dalam fisika seperti Gerak Lurus Beraturan dan Gerak Lurus Berubah Beraturan.&nbsp;</p>
+
+<p style="text-align: justify;">Waktu yang kita miliki terbatas, dan kalaupun berhasil menghafal belum tentu kita bisa mengerjakan soalnya, karena soal di ujian atau bahkan di dunia nyata tidak sepolos itu.&nbsp;</p>
+
+<p style="text-align: justify;">Seperti contoh soal yang kita dapat dalam buku atau penjelasan guru :</p>
+
+<p style="text-align: justify;"><span style="text-align: left;">"Sebuah baju seharga Rp\(100.000 \) mendapatkan diskon \(20\%\). Berapa harga baju setelah diskon?"</span></p>
+
+<p style="text-align: justify;"><span style="text-align: left;">Kita bisa langsung menghitung nilai diskon (\(\frac{20}{100}\) × \(100.000\) = \(20.000\)) lalu menguranginya (\(100.000\) - \(20.000\) = Rp\(80.000\)).</span></p>
+
+<p style="text-align: justify;"><span style="text-align: left;">Tapi soal yang ada di ujian atau kondisi yang terjadi di dunia nyata:</span></p>
+
+<p style="text-align: justify;"><span style="text-align: left;">"Toko A memberikan promo "Diskon 50% + 20%" untuk sebuah sepatu seharga Rp500.000. Pembeli juga harus membayar pajak (PPN) sebesar 10% dari harga setelah diskon. Jika Budi membawa uang Rp250.000, apakah uangnya cukup? Berapa sisa/kekurangannya?"</span></p>
+
+<p style="text-align: justify;"><span style="text-align: left;">Kita tidak bisa menganggap&nbsp;</span><span style="text-align: left;">"Diskon \(50\%\) + \(20\%\)" Berarti diskonnya adalah "\(70\%\)" Salah total, belum lagi kita harus menghitung PPN nya.&nbsp;</span></p>
+
+<p style="text-align: justify;">karena itu yang terpenting sebenernya bukan hafal atau tidaknya sebuah rumus, tapi paham <b>apa </b>dan <b>kenapa</b>.&nbsp;</p>
+
+<p style="text-align: justify;">Banyak profesional dan guru yang masih membuka catatannya untuk melihat rumus, agar hasil yang didapat tepat.&nbsp;</p>
+
+<p style="text-align: justify;">Hafal di luar kepala adalah sebuah bonus, dan untuk mencapai itu kita harus paham konsep dasar sebuah rumus.&nbsp;</p>
+
+<p style="text-align: justify;">Dan disinilah peran pindah ruas untuk sedikit membantu kita dengan hanya satu atau dua rumus kunci lalu kita bisa mengetahui sebagian besar rumus dalam satu materi.</p>
+
+<h2 style="border-left: 5px solid rgb(2, 132, 199); color: #0f172a; font-family: Poppins, sans-serif; font-weight: 700; margin-top: 30px; padding-left: 12px;">Pondasi Dasar</h2>
+
+<p style="text-align: justify;">Pindah ruas seperti yang sebelumnya dijelaskan adalah proses memindahkan variabel, suku, atau angka dari satu sisi tanda sama dengan (=) ke sisi lainnya dengan mengubah tanda atau operasi bilangannya.</p>
+
+<p style="text-align: justify;">Disini kita akan sedikit menyederhanakan konsepnya agar lebih mudah dipahami dalam proses bongkar pasang rumus ini.</p>
+
+<p><span style="text-align: justify;">Sebelumnya kita harus tahu aturan dari pasangan operasi dasar ini:</span></p>
+
+<div style="background-color: #bdedff; border-radius: 10px; border: 1px solid rgb(191, 219, 254); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 16px;"><span style="color: #334155; font-size: 14px;">
+
+\[
+\begin{align*}
+\text{Penjumlahan}\;(+) &amp;= \text{Pengurangan}\;(-) \\
+\text{Perkalian}\;(×) &amp;= \text{Pembagian}\;(÷) \\
+\text{Kuadrat}\;(x^2) &amp;= \text{Akar}\;\sqrt{x}
+\end{align*}
+\]
+
+</span></div>
+
+<p style="text-align: justify;">Maksudnya adalah jika sebuah variabel, suku, atau angka adalah penjumlahan (+) di satu sisi, maka saat dipindahkan ke sisi lain maka tandanya berubah menjadi pengurangan (-).&nbsp;</p><p style="text-align: left;"><b>Contoh:</b></p>
+
+\[
+\begin{align*}
+a + b\;&amp;=\;c \\
+b &amp;= c\;{\color {#e41b17} {-\;a}} \\
+a &amp;= c\;{\color {#e41b17} {-\;b}}
+\end{align*}
+\]
+
+<p style="text-align: left;">Atau</p>
+
+\[
+\begin{align*}
+a\;×\;b &amp;= c \\
+b &amp;= {\color{#1b8a6b}{{\frac{{\color{#000}{c}}}{a}}}} \\
+a &amp;= {\color{#1b8a6b}{{\frac{{\color{#000}{c}}}{b}}}}
+\end{align*}
+\]
+
+<p>ataupun juga</p>
+
+\[
+\begin{align*}
+\color {#d4a017}{\sqrt{\color {#000}{a^2 + b^2}}} &amp;= c \\
+a^2 {\color{#e41b17}{+ b}}^2 &amp;= c\color {#d4a017}{^2} \\
+  a{\color{#1569c7}{^2}} &amp;= c^2\;{\color{#e41b17}-\;b}^2 \\
+  a &amp;= {\color {#1569c7}{\sqrt{\color{#000}c^2\;-\;b^2}}}
+\end{align*}
+\]
+
+<h2 style="border-left: 5px solid rgb(2, 132, 199); color: #0f172a; font-family: Poppins, sans-serif; font-weight: 700; margin-top: 30px; padding-left: 12px;">Penerapan Pindah Ruas pada Rumus</h2>
+
+<p style="text-align: justify;">Sekarang kita masuk ke inti pembahasan pada artikel ini, setelah anda paham pondasi dasarnya, maka penerapan metode pindah ruas ini akan lebih mudah.&nbsp;</p><p style="text-align: left;">Kita ambil contoh pertama dalam <b>Geometri:</b></p>
+
+<p style="text-align: left;"><b>Segitiga Siku-siku</b></p><table style="border-color: currentcolor; border-image: none; border-style: none; border-width: medium; border: none; font-family: inherit; text-align: left;"><tbody></tbody></table><p style="text-align: left;">Rumus Utama:</p>
+
+\[
+\begin{align*}
+\text{Luas} &amp;=\frac{\text{alas × tinggi}}{2}
+\end{align*}
+\]
+
+<p style="text-align: justify;">Maka jika yang ditanyakan adalah nilai alas:</p>
+
+\[
+\begin {align*}
+\text{Luas} &amp;= \frac{\text{alas}\;{\color{#1569c7}{×\;\text{tinggi}}}}{\color{#1b8a6b}{2}} \\
+\frac{{\color{#1b8a6b}{2\;×}}\;\text{Luas}}{\color{#1569c7}{\text{tinggi}}} &amp;= \text{alas}
+\end{align*}
+\]
+
+<p style="text-align: justify;">Dan jika yang ditanyakan adalah nilai tinggi:</p>
+
+\[
+\begin{align*}
+\frac{\color{#1b8a6b}{2\;×\;L}}{t} &amp;= a \\
+\frac{1}{t} &amp;= \frac{a}{\color{#1b8a6b}{2\;×\;L}} \\
+t &amp;= \frac{2\;×\;L}{a}
+\end{align*}
+\]
+
+<p style="text-align: justify;">Kita coba pembuktian rumus-rumus tersebut:</p><p style="text-align: justify;">Diketahui sebuah segitiga dengan alas = 8 cm, dan tinggi = 5 cm.&nbsp;</p><p style="text-align: justify;">Maka berapa Luasnya?&nbsp;</p><p style="text-align: left;">
+
+\[
+\begin{align*}
+\text{Luas} &amp;= \frac{8 × 5}{2} \\
+\mathbf{20\text{cm}^2} &amp;= \frac{40}{2}
+\end{align*}
+\]
+
+</p><p style="text-align: left;">Sekarang, bayangkan Luas (L = 20cm²) dan tinggi (t = 5cm) sudah diketahui, tapi alas (a) belum diketahui. Kita gunakan rumus hasil pindah ruas:</p>
+
+\[
+\begin{align*}
+\frac{2 × 20}{5} &amp;= \text{alas} \\
+\frac{40}{5} &amp;= \mathbf{8\text{cm}}
+\end{align*}
+\]
+
+<p style="text-align: justify;">Selanjutnya kita coba <b>Persentase:</b></p><p style="text-align: left;">Rumus utama :</p>
+
+\[
+\begin{align*}
+\text{Persentase (%)} &amp;= (\frac{\text{Bagian}}{\text{Total}}) × 100\%
+\end{align*}
+\]
+
+<p style="text-align: justify;">Jika yang ditanyakan adalah Bagian nya:</p>
+
+\[
+\begin{align*}
+\text{Persentase (%)} &amp;= (\frac{\text{Bagian}}{\color {#1b8a6b}{\text{Total}}}){\color {#1569c7}{× 100}}\% \\
+\frac{{\color{#1b8a6b}{\text{Total}}} × \text{Persentase(%)}}{\color{#1569c7}{100}} &amp;= \text{Bagian}
+\end{align*}
+\]
+
+<p style="text-align: left;">Dan jika yang ditanyakan adalah Totalnya:</p>
+
+\[
+\begin{align*}
+\frac{{\text{Total}}{\color{#1b8a6b}{\text{× Persentase(%)}}}}{\color{#1569c7}{100}} &amp;= \text{Bagian} \\
+\text{Total} &amp;= \frac{{\text{Bagian}} × {\color{#1569c7}{100}}}{{\color{#1b8a6b}{\text{Persentase (%)}}}}
+\end{align*}
+\]
+
+<div style="background-color: #fafafa; border-radius: 8px; border: 2px dashed rgb(203, 213, 225); font-family: Poppins, sans-serif; margin: 20px 0px; padding: 14px 18px;">
+  <span style="color: #475569; display: block; font-size: 15px; margin-bottom: 4px;"><b>📝 CATATAN:&nbsp;</b><span style="color: #334155; font-size: 14px;">Hilangnya simbol persen (%)</span></span><div style="text-align: justify;"><b>Simbol persen (%) hilang karena dikembalikan ke bentuk nilai desimalnya, yaitu pecahan per seratus \(\mathbf{\frac{1}{100}}\)</b><i>.</i></div><div style="text-align: justify;"><p dir="ltr">Berikut penjelasan sederhananya:</p><p dir="ltr"><b>•Arti dari (%)</b><b>:</b> Simbol persen (%) secara matematis adalah singkatan dari \(\frac{1}{100}\) atau \(0,01\).</p><p><b>Alasan (%)&nbsp;</b><b>Menjadi Per </b><b>100</b><b>:<br /></b>Saat rumus utama dikali \(100\%\): Persentase = \((\frac{\text{Bagian}}{\text{Total}})× 100\%\). Maka \(100\%\) itu sebenarnya adalah \(100 \times \frac{1}{100}\).</p><p dir="ltr">Ketika rumus dipindah-ruaskan untuk mencari <b>Bagian</b> atau <b>Total</b>: \(\frac{\text{Total} \times \text{Persentase}}{100} = \text{Bagian}\)</p><p dir="ltr">Nilai <b>Persentase</b> yang dimasukkan ke dalam rumus tersebut adalah angka murninya saja (misal \(20\%\), cukup masukkan angka \(20\)). Angka \(100\) di bagian penyebut (bawah) bertindak sebagai pengganti simbol \(\%\) \((\frac{1}{100})\) tersebut agar perhitungannya menjadi angka biasa.</p><p dir="ltr">
+</p><i></i></div></div>
+
+<p> Selain Matematika metode pindah ruas inipun bisa digunakan dalam Fisika </p><p>Seperti misalnya:</p><p>
+  
+<b>Rumus Kecepatan &amp; Jarak:</b></p><p style="text-align: left;">\(v\) = Kecepatan<br />\(s\) = Jarak<br />\(t\) = Waktu</p>
+
+<p style="text-align: left;">Rumus Kecepatan (\(v\)):</p>
+
+\[
+\begin {align*}
+v &amp;= \frac{s}{t}
+\end{align*}
+\]
+
+<p>Kita kembangkan agar menjadi Rumus mencari Jarak (\(s\))</p>
+
+\[
+\begin {align*}
+v &amp;= {\color{#1b8a6b}{\frac{{\color{#000}{s}}}{t}}} \\
+{\color{#1b8a6b}{t}} × v &amp;= s
+\end{align*}
+\]
+
+<p> Dan bisa dikembangkan lagi jadi Rumus Mencari Waktu (\(t\))</p>
+
+\[
+\begin{align*}
+t {\color{#1b8a6b}{× v}} &amp;= s \\
+t &amp;= {\color{#1b8a6b}{\frac{{\color{#000}{s}}}{v}}}
+\end{align*}
+\]
+
+<h2 style="border-left: 5px solid rgb(2, 132, 199); color: #0f172a; font-family: Poppins, sans-serif; font-weight: 700; margin-top: 30px; padding-left: 12px;">Penerapan Pindah Ruas untuk mencari Variabel yang hilang</h2>
+
+<p style="text-align: justify;">Selain untuk mempermudah dalam menghafal sebuah rumus, metode pindah ruas ini pun bisa kita gunakan untuk mencari variabel yang hilang. Mulai dari angka abstrak di papan tulis (x, y, z,\dots) sampai hal-hal yang terjadi di dunia nyata—mulai dari menghitung waktu tempuh, menentukan target penjualan, hingga meracik obat. Sebab masalah yang kita hadapi selalu sama: ada satu angka yang belum diketahui. Di bab ini, kita akan melihat bagaimana operasi sederhana 'tukar posisi' ini bertransformasi dari sekadar teori matematika menjadi alat pemecah masalah praktis yang menentukan angka pasti di tengah ketidakpastian.</p>
+
+<p style="text-align: justify;">Kita coba contoh kasus variabel yang hilang dalam <b>angka abstrak</b>:</p>
+
+<p style="text-align: justify;">- (Aljabar) Tentukan nilai \(x\) dari persamaan berikut:</p>
+
+\[ 3x + 8 = 23 \]
+
+<p style="text-align: justify;">Maka kita tinggal mengisolasi \(x\) agar berada di satu ruas sendiri:</p>
+
+\[
+\begin{align*}
+3x {\color {#e41b17}{+ 8}} &amp;= 23 \\
+{\color {#1b8a6b}{3}}x &amp;= 23 {\color {#e41b17}{- 8}} \\
+x &amp;= \color{#1b8a6b}{\frac{{\color{#000}{15}}}{3}} \\
+x &amp;= \mathbf{5}
+\end{align*}
+\]
+
+<p style="text-align: justify;">- (Eksponensial) Tentukan nilai \(x\) yang memenuhi persamaan:</p>
+
+\[ 2^{3x-1} + 4 = 20 \]
+
+<p style="text-align: justify;"><b>Pindahkan angka bebas nya:</b></p>
+
+\[ \begin{align*}
+2^{3x-1} {\color {#e41b17}{+ 4}} &amp;= 20 \\
+2^{3x-1} &amp;= 20 {\color {#e41b17}{- 4}} \\
+2^{3x-1} &amp;= 16
+\end{align*}
+\]
+
+<p style="text-align: left;"></p><p style="text-align: justify;"><b>Samakan basisnya:<br /></b>Ubah \(16\) menjadi bentuk pangkat dari \(2\), yaitu \(2^4\).</p><p style="text-align: left;">
+
+\[ 2^{3x-1} = 2^4 \]</p><p style="text-align: left;"></p><p style="text-align: left;"></p><p style="text-align: justify;"><b>Gugurkan basisnya, lalu pindah ruas seperti biasa:<br /></b>Karena basisnya sudah sama-sama 2, kita cukup selesaikan pangkatnya:</p>
+
+\[ 
+\begin{align*}
+3x {\color{#e41b17}{- 1}} &amp;= 4 \\
+{\color{#1b8a6b}{3}}x &amp;= 4 {\color {#e41b17}{+ 1}} \\
+x &amp;= \mathbf{{\color{#1b8a6b}{\frac{\color{#000}{5}}{3}}}}
+\end{align*}
+\]
+
+<p style="text-align: justify;">Lalu kita coba pada <b>angka nyata</b> di kasus yang terjadi sehari-hari:</p>
+
+<p dir="ltr" style="text-align: justify;">"Budi baru saja membuka usaha kedai kopi kekinian. Biaya sewa tempat dan listrik per hari adalah <b>Rp150.000</b>&nbsp;(biaya tetap). Keuntungan bersih (<i>margin</i>) dari satu cangkir kopi yang terjual adalah <b>Rp10.000</b>. Jika Budi menargetkan ingin membawa pulang keuntungan bersih sebesar <b>Rp250.000</b> per hari, berapa cangkir kopi (x) yang harus terjual hari itu?"</p><p dir="ltr"><b>Modelkan ke Persamaan Matematika:</b></p>
+
+\[
+\begin{align*}
+{\text{Total Keuntungan}} &amp;= {\text{margin per-cangkir}} × x) - \text{Biaya Sewa} \\
+250.000 &amp;= (10.000 × x) {\color{#e41b17}{- 150.000}} \\
+250.000 {\color{#e41b17}{+ 150.000}} &amp;= {\color{#1b8a6b}{10.000}}x \\
+\frac{400.000}{{\color{#1b8a6b}{10.000}}} &amp;= x \\
+\mathbf{40} &amp;= x
+\end{align*}
+\]
+
+<p style="text-align: justify;"> Jadi harus menjual 40 cangkir kopi agar keuntungannya mencapai Rp250.000.</p><p>Contoh kasus kedua:</p><p></p><p dir="ltr" style="text-align: justify;">"Kamu mau membeli laptop seharga <b>Rp8.000.000</b>. Saat ini kamu sudah punya tabungan awal sebesar <b>Rp2.000.000</b>. Jika kamu sanggup menyisihkan tabungan rutin sebesar <b>Rp750.000</b> per bulan, berapa bulan (n) yang kamu butuhkan sampai uangnya terkumpul pas?"</p>
+
+\[
+\begin{align*}
+{\color{#e41b17}{2.000.000}} + (750.000 × n) &amp;= 8.000.000 \\
+{\color{#1b8a6b}{750.000}}n &amp;= 8.000.000 {\color{#e41b17}{- 2.000.000}} \\
+n &amp;= \frac{6.000.000}{{\color{#1b8a6b}{750.000}}} \\
+n &amp;= \mathbf{8\;{\text{Bulan}}}
+\end{align*}
+\]
+
+<h2 id="pisah-digit" style="border-left: 5px solid rgb(2, 132, 199); color: #0f172a; font-family: Poppins, sans-serif; font-weight: 700; margin-top: 30px; padding-left: 12px; text-align: justify;">Penutup</h2>
+
+<p style="text-align: justify;">Itulah beberapa contoh cara memanfaatkan Metode Pindah Ruas baik dalam Rumus ataupun mencari Variabel.&nbsp;<span style="text-align: left;">Metode pindah ruas bukan sekadar trik cepat, melainkan kunci dasar agar kamu tidak perlu lagi membebani otak dengan menghafal puluhan turunan rumus. Cukup kuasai logika pindah ruas, dan variabel serumit apa pun bisa kamu selesaikan dengan mudah.</span></p>
