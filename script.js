@@ -40,7 +40,7 @@ window.addEventListener('load', function () {
   }
 });
 
-/* js game
+/* js game*/
 // Database Bank Soal Komprehensif (Matematika, Fisika, Kimia - Murni Konsep Rumus)
 const bankSoal = [
   // --- MATEMATIKA ---
@@ -268,5 +268,5 @@ function checkAnswer(selectedBtn, isCorrect, explanation) {
 }
 
 // Jalankan kuis pertama kali saat halaman siap
-document.addEventListener("DOMContentLoaded", loadNextQuestion); */
+document.addEventListener("DOMContentLoaded", loadNextQuestion);
 
