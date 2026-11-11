@@ -479,31 +479,47 @@ n &amp;= \mathbf{8\;{\text{Bulan}}}
 
           <p>Kamu sudah melihat bagaimana teknik pindah ruas bisa menyelamatkan kita dari kewajiban menghafal puluhan rumus mati. Sekarang saatnya menguji seberapa tajam insting logikamu! Tenang saja, kuis ini <em>murni menguji pola dan arah pergeseran variabel</em>—tanpa ada hitung-angka yang rumit. Yuk, taklukkan tantangan di bawah ini!</p>
 
-           <!-- Container Wadah Kuis -->
+      <!-- Container Wadah Kuis -->
   
-<!--<div class="quiz-wrapper">
-  <div class="quiz-card">
-    <div class="quiz-header">
-      <span class="badge" id="quiz-category">Kategori</span>
-      <h3 class="quiz-title">🧩 Uji Logika Bongkar Pasang Rumus</h3>
-    </div>
+      <!-- 1. Letakkan Wadah Ini di Posisi Artikel Tempat Kuis Ingin Dimunculkan -->
+        <div id="quiz-container">
+          <p style="text-align: center; color: #64748b; padding: 20px;">Memuat soal kuis...</p>
+        </div>
 
-    <div class="quiz-body">
-      <p id="quiz-question" class="question-text">Memuat soal...</p>
-      <div id="quiz-options" class="options-group"></div>
-      <div id="quiz-feedback" class="feedback-box hidden">
-        <p id="feedback-text"></p>
-        <p id="explanation-text" class="explanation"></p>
-      </div>
-    </div>
+      <!-- 2. Skrip Fetch untuk Menarik kuis.html Secara Otomatis -->
+        <script>
+          (function() {
+  // Ganti URL di bawah ini sesuai dengan alamat repository GitHub Pages Anda
+          const kuisUrl = 'https://magenta-id.github.io/Keajaiban-pindah-ruas/kuis.html?v=' + new Date().getTime();
 
-    <div class="quiz-footer">
-      <button id="next-btn" class="btn-next" onclick="loadNextQuestion()">Soal Berikutnya ➔</button>
-    </div>
-  </div>
-</div>-->
+          fetch(kuisUrl, { cache: 'no-store' })
+          .then(response => {
+          if (!response.ok) throw new Error('Gagal memuat kuis dari server');
+          return response.text();
+          })
+          .then(data => {
+          const container = document.getElementById('quiz-container');
+          if (container) {
+          container.innerHTML = data;
 
-        </section>
+  // Render ulang MathJax agar rumus matematika di dalam kuis langsung terbaca
+          if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+          MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err.message));
+          }
+        }
+      })
+          .catch(error => {
+          const container = document.getElementById('quiz-container');
+          if (container) {
+          container.innerHTML = '<p style="text-align: center; color: #ef4444;">Gagal memuat kuis.</p>';
+         }
+        console.error('Fetch error:', error);
+            });
+           })();
+        </script>
+
+
+       </section>
 
         <footer>
           <h2 class="judul_Materi">Penutup</h2>
