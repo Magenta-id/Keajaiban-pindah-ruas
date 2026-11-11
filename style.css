@@ -155,17 +155,16 @@ h3.sub-bab {
   line-height: 1.4;
 }
 
-/* Garis linear gradient merah putih di sebelah kiri */
+/* Garis linear gradient di sebelah kiri */
 h3.sub-bab::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0.1rem;
   bottom: 0.1rem;
-  width: 4px; /* Ketebalan garis */
+  width: 4px;
   border-radius: 4px;
-  /* Gradient vertikal: bagian atas merah, bagian bawah putih/transparan agar lembut */
-  background: linear-gradient(to bottom, #ef4444 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, #2563eb 0%, #06b6d4 100%); /* Biru terang ke Toska */
 }
 
 /* Batas */
