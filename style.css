@@ -217,25 +217,22 @@ img {
   align-items: center;
   margin-bottom: 1rem;
 }
-
 .rumus-badge {
   background-color: #dbeafe;
   color: #1e40af;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
 }
-
 .rumus-icon {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
-
 .rumus-content {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #1e293b;
   padding: 0.75rem 0;
@@ -244,14 +241,14 @@ img {
   border: 1px dashed #cbd5e1;
   margin-bottom: 1rem;
 }
-
 .rumus-footer {
-  font-size: 0.675rem;
+  font-size: 0.875rem;
   color: #64748b;
   border-top: 1px solid #e2e8f0;
   padding-top: 0.75rem;
   line-height: 1.4;
 }
+
 /* Batas */
 
 /* Catatan */
