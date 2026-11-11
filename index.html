@@ -480,47 +480,215 @@ n &amp;= \mathbf{8\;{\text{Bulan}}}
           <p>Kamu sudah melihat bagaimana teknik pindah ruas bisa menyelamatkan kita dari kewajiban menghafal puluhan rumus mati. Sekarang saatnya menguji seberapa tajam insting logikamu! Tenang saja, kuis ini <em>murni menguji pola dan arah pergeseran variabel</em>—tanpa ada hitung-angka yang rumit. Yuk, taklukkan tantangan di bawah ini!</p>
 
       <!-- Container Wadah Kuis -->
-  
-       <!-- WADAH TEMPAT KUIS AKAN DIMUNCULKAN -->
-  <div id="quiz-container">
-    <p>Memuat kuis...</p>
+
+          <!-- ========================================== -->
+<!-- KUIS: UJI LOGIKA BONGKAR PASANG RUMUS -->
+<!-- ========================================== -->
+<div class="quiz-wrapper">
+  <div class="quiz-card">
+    <div class="quiz-header">
+      <span class="badge" id="quiz-category">Kategori</span>
+      <h3 class="quiz-title">🧩 Uji Logika Bongkar Pasang Rumus</h3>
+    </div>
+
+    <div class="quiz-body">
+      <p id="quiz-question" class="question-text">Memuat soal...</p>
+      <div id="quiz-options" class="options-group"></div>
+      <div id="quiz-feedback" class="feedback-box hidden">
+        <p id="feedback-text"></p>
+        <p id="explanation-text" class="explanation"></p>
+      </div>
+    </div>
+
+    <div class="quiz-footer">
+      <button id="next-btn" class="btn-next" onclick="loadNextQuestion()">Soal Berikutnya ➔</button>
+    </div>
   </div>
 </div>
 
-<!-- SKRIP PEMANGGIL KUIS.HTML DI DALAM INDEX.HTML -->
+<!-- CSS Kuis -->
+<style>
+  .quiz-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .quiz-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    max-width: 550px;
+    width: 100%;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+  }
+  .quiz-header { margin-bottom: 16px; }
+  .badge {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .quiz-title { margin: 0; color: #1e293b; font-size: 1.25rem; }
+  .question-text { font-size: 1.05rem; color: #334155; line-height: 1.6; margin-bottom: 20px; }
+  .options-group { display: flex; flex-direction: column; gap: 10px; }
+  .option-btn {
+    background-color: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 1rem;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+  .option-btn:hover:not(:disabled) { background-color: #eff6ff; border-color: #3b82f6; }
+  .option-btn.correct { background-color: #dcfce7 !important; border-color: #22c55e !important; color: #15803d; font-weight: 600; }
+  .option-btn.wrong { background-color: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c; }
+  .feedback-box { margin-top: 16px; padding: 12px 16px; border-radius: 8px; font-size: 0.95rem; }
+  .feedback-box.correct-bg { background-color: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+  .feedback-box.wrong-bg { background-color: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+  .explanation { margin-top: 6px; font-size: 0.9rem; opacity: 0.9; }
+  .hidden { display: none; }
+  .quiz-footer { margin-top: 20px; text-align: right; }
+  .btn-next {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .btn-next:hover { background-color: #1d4ed8; }
+</style>
+
+<!-- JavaScript Kuis -->
 <script>
-(function() {
-  const kuisUrl = 'https://magenta-id.github.io/Keajaiban-pindah-ruas/kuis.html?v=' + new Date().getTime();
+  const bankSoal = [
+    {
+      kategori: "Matematika (Barisan & Deret Aritmatika)",
+      soal: "Rumus suku ke-\\(n\\) aritmatika adalah \\( U_n = a + (n-1)b \\). Bentuk rumus yang benar jika kita ingin mencari **Beda (\\(b\\))** adalah...",
+      benar: "\\( b = \\frac{U_n - a}{n-1} \\)",
+      salah: ["\\( b = \\frac{U_n + a}{n-1} \\)", "\\( b = (U_n - a) \\times (n-1) \\)", "\\( b = \\frac{n-1}{U_n - a} \\)"],
+      penjelasan: "Pindahkan \\(a\\) ke ruas kiri menjadi \\(U_n - a\\), lalu bagi dengan \\((n-1)\\)."
+    },
+    {
+      kategori: "Matematika (Statistika / Rata-rata)",
+      soal: "Rumus rata-rata adalah \\( \\bar{x} = \\frac{\\sum x}{n} \\). Jika ingin mengisolasi variabel **Jumlah Total Data (\\(\\sum x\\))**, rumusnya menjadi...",
+      benar: "\\( \\sum x = \\bar{x} \\times n \\)",
+      salah: ["\\( \\sum x = \\frac{n}{\\bar{x}} \\)", "\\( \\sum x = \\bar{x} - n \\)", "\\( \\sum x = \\frac{\\bar{x}}{n} \\)"],
+      penjelasan: "Variabel \\(n\\) yang bertindak sebagai pembagi di ruas kanan dipindah ke ruas kiri menjadi pengali."
+    },
+    {
+      kategori: "Fisika (Dinamika / Hukum Newton)",
+      soal: "Berdasarkan hukum kedua Newton \\( F = m \\times a \\), bentuk rumus yang benar jika kita ingin mencari **Percepatan (\\(a\\))** adalah...",
+      benar: "\\( a = \\frac{F}{m} \\)",
+      salah: ["\\( a = F \\times m \\)", "\\( a = \\frac{m}{F} \\)", "\\( a = F - m \\)"],
+      penjelasan: "Massa \\(m\\) yang dikalikan dengan \\(a\\) dipindah ke ruas kiri menjadi pembagi bagi \\(F\\)."
+    }
+  ];
 
-  fetch(kuisUrl, { cache: 'no-store' })
-    .then(response => response.text())
-    .then(data => {
-      const container = document.getElementById('quiz-container');
-      if (container) {
-        // Masukkan isi kuis.html ke dalam wadah
-        container.innerHTML = data;
+  let currentIndex = -1;
 
-        // Eksekusi ulang tag <script> yang ada di dalam kuis.html agar fungsi soalnya aktif
-        const scripts = container.querySelectorAll('script');
-        scripts.forEach(script => {
-          const newScript = document.createElement('script');
-          newScript.text = script.innerText;
-          document.body.appendChild(newScript);
-        });
+  function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
 
-        // Render ulang MathJax jika ada rumus matematika
-        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
-          MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err.message));
-        }
-      }
-    })
-    .catch(error => {
-      console.error('Fetch error:', error);
-    });
-})();
-</script>
+  function loadNextQuestion() {
+    const feedbackBox = document.getElementById("quiz-feedback");
+    if (feedbackBox) feedbackBox.classList.add("hidden");
+    
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * bankSoal.length);
+    } while (newIndex === currentIndex && bankSoal.length > 1);
+    currentIndex = newIndex;
 
+    const currentQuiz = bankSoal[currentIndex];
+    const catEl = document.getElementById("quiz-category");
+    const qEl = document.getElementById("quiz-question");
+    
+    if (catEl) catEl.innerText = currentQuiz.kategori;
+    if (qEl) qEl.innerHTML = currentQuiz.soal;
 
+    const allOptions = [
+      { text: currentQuiz.benar, isCorrect: true },
+      ...currentQuiz.salah.map(item => ({ text: item, isCorrect: false }))
+    ];
+    const shuffledOptions = shuffle([...allOptions]);
+
+    const optionsContainer = document.getElementById("quiz-options");
+    if (optionsContainer) {
+      optionsContainer.innerHTML = "";
+      shuffledOptions.forEach(option => {
+        const button = document.createElement("button");
+        button.className = "option-btn";
+        button.innerHTML = option.text;
+        button.onclick = () => checkAnswer(button, option.isCorrect, currentQuiz.penjelasan);
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise();
+    }
+  }
+
+  function checkAnswer(selectedBtn, isCorrect, explanation) {
+    const allButtons = document.querySelectorAll(".option-btn");
+    allButtons.forEach(btn => btn.disabled = true);
+
+    const feedbackBox = document.getElementById("quiz-feedback");
+    const feedbackText = document.getElementById("feedback-text");
+    const explanationText = document.getElementById("explanation-text");
+
+    if (feedbackBox) feedbackBox.classList.remove("hidden", "correct-bg", "wrong-bg");
+
+    if (isCorrect) {
+      selectedBtn.classList.add("correct");
+      if (feedbackBox) feedbackBox.classList.add("correct-bg");
+      if (feedbackText) feedbackText.innerHTML = "<strong>✅ Benar sekali!</strong> Logika perangkaian rumusmu sudah tepat.";
+    } else {
+      selectedBtn.classList.add("wrong");
+      if (feedbackBox) feedbackBox.classList.add("wrong-bg");
+      if (feedbackText) feedbackText.innerHTML = "<strong>❌ Masih Kurang Tepat.</strong> Perhatikan perubahan tanda dan posisi operasinya.";
+    }
+
+    if (explanationText) explanationText.innerHTML = `<strong>Pembahasan:</strong> ${explanation}`;
+
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise();
+    }
+  }
+
+  // Jalankan otomatis saat halaman siap
+  if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", loadNextQuestion);
+  } else {
+    loadNextQuestion();
+  }
+          </script>
+       
        </section>
 
         <footer>
