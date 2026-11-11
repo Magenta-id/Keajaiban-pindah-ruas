@@ -145,7 +145,7 @@ h3.daftar-isi {
 
 /* Batas */
 
-h3.sub-bab {
+.sub-bab {
   font-size: 1.25rem;
   font-weight: 700;
   color: #1e293b; /* Warna teks utama yang gelap dan nyaman dibaca */
@@ -156,7 +156,7 @@ h3.sub-bab {
 }
 
 /* Garis linear gradient di sebelah kiri */
-h3.sub-bab::before {
+.sub-bab::before {
   content: "";
   position: absolute;
   left: 0;
