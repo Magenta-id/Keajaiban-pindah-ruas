@@ -481,42 +481,44 @@ n &amp;= \mathbf{8\;{\text{Bulan}}}
 
       <!-- Container Wadah Kuis -->
   
-      <!-- 1. Letakkan Wadah Ini di Posisi Artikel Tempat Kuis Ingin Dimunculkan -->
-        <div id="quiz-container">
-          <p style="text-align: center; color: #64748b; padding: 20px;">Memuat soal kuis...</p>
-        </div>
+       <!-- WADAH TEMPAT KUIS AKAN DIMUNCULKAN -->
+  <div id="quiz-container">
+    <p>Memuat kuis...</p>
+  </div>
+</div>
 
-      <!-- 2. Skrip Fetch untuk Menarik kuis.html Secara Otomatis -->
-        <script>
-          (function() {
-  // Ganti URL di bawah ini sesuai dengan alamat repository GitHub Pages Anda
-          const kuisUrl = 'https://magenta-id.github.io/Keajaiban-pindah-ruas/kuis.html?v=' + new Date().getTime();
+<!-- SKRIP PEMANGGIL KUIS.HTML DI DALAM INDEX.HTML -->
+<script>
+(function() {
+  const kuisUrl = 'https://magenta-id.github.io/Keajaiban-pindah-ruas/kuis.html?v=' + new Date().getTime();
 
-          fetch(kuisUrl, { cache: 'no-store' })
-          .then(response => {
-          if (!response.ok) throw new Error('Gagal memuat kuis dari server');
-          return response.text();
-          })
-          .then(data => {
-          const container = document.getElementById('quiz-container');
-          if (container) {
-          container.innerHTML = data;
+  fetch(kuisUrl, { cache: 'no-store' })
+    .then(response => response.text())
+    .then(data => {
+      const container = document.getElementById('quiz-container');
+      if (container) {
+        // Masukkan isi kuis.html ke dalam wadah
+        container.innerHTML = data;
 
-  // Render ulang MathJax agar rumus matematika di dalam kuis langsung terbaca
-          if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+        // Eksekusi ulang tag <script> yang ada di dalam kuis.html agar fungsi soalnya aktif
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(script => {
+          const newScript = document.createElement('script');
+          newScript.text = script.innerText;
+          document.body.appendChild(newScript);
+        });
+
+        // Render ulang MathJax jika ada rumus matematika
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
           MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err.message));
-          }
         }
-      })
-          .catch(error => {
-          const container = document.getElementById('quiz-container');
-          if (container) {
-          container.innerHTML = '<p style="text-align: center; color: #ef4444;">Gagal memuat kuis.</p>';
-         }
-        console.error('Fetch error:', error);
-            });
-           })();
-        </script>
+      }
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+    });
+})();
+</script>
 
 
        </section>
