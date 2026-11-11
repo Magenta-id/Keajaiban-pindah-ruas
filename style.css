@@ -145,6 +145,31 @@ h3.daftar-isi {
 
 /* Batas */
 
+h3.sub-bab {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b; /* Warna teks utama yang gelap dan nyaman dibaca */
+  margin: 2rem 0 1rem 0;
+  padding-left: 0.85rem; /* Jarak antara teks dengan garis gradient di kiri */
+  position: relative;
+  line-height: 1.4;
+}
+
+/* Garis linear gradient merah putih di sebelah kiri */
+h3.sub-bab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  bottom: 0.1rem;
+  width: 4px; /* Ketebalan garis */
+  border-radius: 4px;
+  /* Gradient vertikal: bagian atas merah, bagian bawah putih/transparan agar lembut */
+  background: linear-gradient(to bottom, #ef4444 0%, #ffffff 100%);
+}
+
+/* Batas */
+
 /* Gambar */
 /* Menargetkan semua gambar langsung di CodePen */
 img {
